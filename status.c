@@ -7,11 +7,11 @@
  */
 char *gets_rank_status(int n)
 {
-        char *_status;
+        char *rank;
 
 
-        _status = characters_to_numbers(n);
+        rank = characters_to_numbers(n);
 
 
-        return (_status);
+        return (rank);
 }

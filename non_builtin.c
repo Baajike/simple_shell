@@ -14,8 +14,7 @@
 * by checking the access permission.
 */
 
-void non_builtins_handlers(char **command_array, char *env[], int *rank_status,
-                                                int tally, list_paths *present, char *argv[])
+void non_builtins_handlers(char **command_array, char *env[], int *rank_status, int tally, list_paths *present, char *argv[])
 {
         char *new_path;
 
@@ -30,5 +29,10 @@ void non_builtins_handlers(char **command_array, char *env[], int *rank_status,
                         _executer_commands(new_path, command_array, env, rank_status);
                         free(new_path);
                 }
-		        }
+		else
+		{
+			_error_print(argv[0], tally, command_array[0], NOT_FOUND);
+			*rank_status = NOT_FOUND;
+		}
+	}
 }

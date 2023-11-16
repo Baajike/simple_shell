@@ -32,7 +32,7 @@ char **_vector_to_lines(char *command, int rank_status)
                 if (token != NULL)
                 {
                         if (_strncmp("$$", token) == 0)
-                                cmde = get_id_process();
+                                cmde = pid();
 			else if (_strncmp("$?", token) == 0)
                                 cmde = gets_rank_status(rank_status);
                         else if ((token[0] == '$') && (token[1]))
@@ -75,7 +75,7 @@ char **argument_vector, int rank_status)
                 return (NULL);
         }
         if (_strncmp("$$", token) == 0)
-                cmde = get_id_process();
+                cmde = pid();
         else if (_strncmp("$?", token) == 0)
                 cmde = gets_rank_status(rank_status);
         else if ((token[0] == '$') && (token[1]))

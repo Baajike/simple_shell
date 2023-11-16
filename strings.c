@@ -67,7 +67,11 @@ int _strncmp(char *s1, char *s2)
  * 
  * Return: pointer to destination string
  */
-int i;
+
+char *_strncpy(char *dest, char *src)
+{
+
+	int i;
 
 	for (i = 0; src[i] != '\0'; i++)
 	{
@@ -76,6 +80,7 @@ int i;
 	dest[i] = '\0';
 	return (dest);
 }
+
 /**
  * _strcat - It concatenate drc and dest
  * @dest: destination of concat
@@ -83,10 +88,11 @@ int i;
  * 
  * Return: a pointer
  */
+
 char *_strcat(char *dest, char *src)
 {
         size_t dest_len = strlen(dest);
-        size_t i;
+        int i;
 
         for (i = 0; src[i] != '\0'; i++)
         {

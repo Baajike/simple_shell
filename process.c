@@ -17,7 +17,7 @@ char *token_mapping(char *item_token, int rank_status)
         variable = NULL;
 
         if (_strncmp("$$", item_token) == 0)
-                cmde = get_id_process();
+                cmde = pid();
         else if (_strncmp("$?", item_token) == 0)
                 cmde = gets_rank_status(rank_status);
         else if (item_token[0] == '$' && item_token[1] != '\0')

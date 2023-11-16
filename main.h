@@ -59,17 +59,16 @@ void scan_cmd_file(char *data);
 char *check_inputs_files(char *data);
 void free_lists(list_paths *head);
 char **_vector_to_lines(char *line, int rank_status);
-char *num_to_char(int num);
+char *characters_to_numbers(int num);
 void _error_print(char *name_shell, int tally,
 char *command_array, int type_of_error);
 char *gets_rank_status(int n);
-char *get_id_process();
+char *pid();
 char *_getenv_var(const char *name);
 int builtin(char *command, char **command_array, list_paths *present,
 char *name_shell, int tally, int *rank_status,
 list_paths *env_list, char **command_lines, char **argv);
-void non_builtins_handlers(char **command_array, char *env[], int *rank_status,
-int tally, list_paths *present, char *argv[]);
+void non_builtins_handlers(char **command_array, char *env[], int *rank_status, int tally, list_paths *present, char *argv[]);
 extern char **environ;
 list_paths *linkedlist_to_paths();
 size_t prints_lists(const list_paths *h);
